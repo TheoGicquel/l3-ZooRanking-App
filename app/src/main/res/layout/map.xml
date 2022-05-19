@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="zoo.turquoise.zooappturquoise">
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.Zooappturquoise">
+        <activity
+                android:name=".map"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+                <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/map"
+                        tools:layout_editor_absoluteX="wrap_content"
+                        tools:layout_editor_absoluteY="wrap_content"/>
+                <ImageView2
+                        android:id="@+id/imageView2"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView3
+                        android:id="@+id/imageView3"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView4
+                        android:id="@+id/imageView4"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView5
+                        android:id="@+id/imageView5"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView6
+                        android:id="@+id/imageView6"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView7
+                        android:id="@+id/imageView7"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView8
+                        android:id="@+id/imageView8"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+                <ImageView9
+                        android:id="@+id/imageView9"
+                        android:layout_width="25px"
+                        android:layout_height="25px"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/epingle"
+                        tools:layout_editor_absoluteX="55dp"
+                        tools:layout_editor_absoluteY="130dp"/>
+
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
