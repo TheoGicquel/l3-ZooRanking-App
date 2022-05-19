@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">zooappturquoise</string>
+    <string name="app_name">ZooPedia</string>
+    <string name="mapPageButtonString">Carte</string>
+    <string name="rankingPageButtonString">Classement</string>
+    <string name="newsPageButtonString">Actualites</string>
+    <string name="donatePageButtonString">Don</string>
+    <string name="mainMenuTitle">TextView</string>
+
 </resources>
