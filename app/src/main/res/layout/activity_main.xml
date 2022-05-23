@@ -6,28 +6,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
-    <Button
-            android:text="@string/mapPageButtonString"
+    <ImageButton
+            android:contentDescription="@string/mapPageButtonString"
             android:layout_width="130dp"
             android:layout_height="130dp" android:id="@+id/zooMapViewButton"
             app:layout_constraintStart_toStartOf="@+id/verticalGuide"
             app:layout_constraintBottom_toTopOf="@+id/horizontalGuide" android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
-    <Button
-            android:text="@string/donatePageButtonString"
+            android:layout_marginEnd="16dp" android:src="@drawable/icon_map" android:scaleType="centerInside"
+            android:background="#00FFFFFF" tools:ignore="ImageContrastCheck"/>
+    <ImageButton
+            android:contentDescription="@string/donatePageButtonString"
             android:layout_width="130dp"
             android:layout_height="130dp" android:id="@+id/donateViewButton"
-            app:layout_constraintTop_toTopOf="@+id/horizontalGuide" app:layout_constraintStart_toStartOf="@+id/verticalGuide"
+            app:layout_constraintTop_toTopOf="@+id/horizontalGuide"
+            app:layout_constraintStart_toStartOf="@+id/verticalGuide"
             android:layout_marginTop="16dp" android:layout_marginStart="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
-    <Button
-            android:text="@string/newsPageButtonString"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:background="#00FFFFFF"
+            android:src="@drawable/icon_donate" android:scaleType="centerInside" tools:ignore="ImageContrastCheck"/>
+    <ImageButton
+            android:contentDescription="@string/newsPageButtonString"
             android:layout_width="130dp"
             android:layout_height="130dp" android:id="@+id/newsViewButton"
-            app:layout_constraintTop_toTopOf="@+id/horizontalGuide" app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+            app:layout_constraintTop_toTopOf="@+id/horizontalGuide"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
             android:layout_marginTop="16dp" android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            android:background="#00FFFFFF" android:src="@drawable/icon_news" android:scaleType="centerInside"
+            tools:ignore="ImageContrastCheck"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/horizontalGuide" app:layout_constraintGuide_begin="20dp"
                                                 android:orientation="horizontal"
@@ -39,13 +45,13 @@
             android:layout_height="wrap_content" android:id="@+id/verticalGuide"
             app:layout_constraintGuide_percent="0.5"
     />
-    <Button
-            android:text="@string/rankingPageButtonString"
+    <ImageButton
+            android:contentDescription="@string/rankingPageButtonString"
             android:layout_width="130dp"
             android:layout_height="130dp" android:id="@+id/zooListViewButton"
             app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/horizontalGuide"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp" android:layout_marginStart="16dp"
-    />
+            android:background="#00FFFFFF" android:src="@drawable/icon_search" android:scaleType="centerInside"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
