@@ -5,5 +5,6 @@
     <string name="newsPageButtonString">Actualites</string>
     <string name="donatePageButtonString">Don</string>
     <string name="mainMenuTitle">TextView</string>
+    <string name="goBackString">Retour</string>
 
 </resources>
