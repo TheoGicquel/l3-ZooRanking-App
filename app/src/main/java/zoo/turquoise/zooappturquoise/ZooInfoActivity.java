@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.zoo_info_layout);
+            setContentView(R.layout.zoo_infos_layout);
         }
 
         public void zooPostReviewAction(View view) {
