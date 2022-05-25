@@ -7,6 +7,6 @@ public class map extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.map);
+        setContentView(R.layout.zoomap);
     }
 }
