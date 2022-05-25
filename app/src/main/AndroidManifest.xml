@@ -24,6 +24,13 @@
         <activity android:name=".NewsActivity"/>
         <activity android:name=".DonateActivity"/>
 
+        <activity
+                android:name=".ListZoo"
+                android:exported="true"
+                android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+                >
+        </activity>
+
     </application>
 
 </manifest>

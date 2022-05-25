@@ -2,17 +2,18 @@ package zoo.turquoise.zooappturquoise;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity{
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
     }
 
@@ -25,6 +26,13 @@ public class MainActivity extends AppCompatActivity{
 
     public void switchToRankingActivity(View view) {
         Intent intent = new Intent(this, RankingActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+    public void openList() {
+        Intent intent = new Intent(this, ListZoo.class);
         startActivity(intent);
         finish();
     }

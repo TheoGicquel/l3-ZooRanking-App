@@ -19,7 +19,7 @@
     <!-- Zoo Details -->
     <string name="infoRateButtonText">Noter</string>
     <string name="infoAvgText">Moyenne</string>
-    <string name="infoReviewsCountLabelText">Nombre d'avis</string>
+    <string name="infoReviewsCountLabelText">Nombre d\'avis</string>
 
 
     <string name="placeHolderZooPictureInfo">Photo du Zoo</string>
