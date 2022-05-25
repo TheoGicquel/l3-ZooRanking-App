@@ -12,5 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.zoo_info_layout);
         }
+
+        public void zooPostReviewAction(View view) {
+            // rate zoo here
+        }
+
     }
 
