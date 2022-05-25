@@ -1,9 +1,44 @@
 <resources>
     <string name="app_name">ZooPedia</string>
-    <string name="mapPageButtonString">Carte</string>
-    <string name="rankingPageButtonString">Classement</string>
-    <string name="newsPageButtonString">Actualites</string>
-    <string name="donatePageButtonString">Don</string>
-    <string name="mainMenuTitle">TextView</string>
+    <!-- MAIN MENU -->
+        <string name="mapPageButtonString">Carte</string>
+        <string name="rankingPageButtonString">Classement</string>
+        <string name="newsPageButtonString">Actualites</string>
+        <string name="donatePageButtonString">Don</string>
+        <string name="mainMenuTitle">TextView</string>
+
+    <string name="goBackString">Retour</string>
+    <string name="searchActionString">Rechercher</string>
+
+    <!-- Placeholder Texts -->
+        <string name="placeHolderLoremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</string>
+
+
+
+    <string name="infoTopBarText">Détails du zoo</string>
+    <!-- Zoo Details -->
+    <string name="infoRateButtonText">Noter</string>
+    <string name="infoAvgText">Moyenne</string>
+    <string name="infoReviewsCountLabelText">Nombre d'avis</string>
+
+
+    <string name="placeHolderZooPictureInfo">Photo du Zoo</string>
+    <string name="zooName_1">Zoo Fictif</string>
+
+    <!-- ratings values -->
+        <string name="infoAccessibilityText">Facilité d\'accès</string>
+        <string name="infoWellBeingText">Bien-Traitance</string>
+        <string name="infoPriceLabelText">Prix</string>
+        <string name="infoExotismLabelText">exotisme</string>
+
+
+        <!-- Unknown values (before loading model)-->
+            <string name="infoRatingUnknown">?</string>
+            <string name="infoRankUnknown">#?</string>
+    <string name="yellowCircleDescription">cercle jaune</string>
+    <string name="redCircleDescription">cercle rouge</string>
+    <string name="orangeCircleDescription">cerle orange</string>
+    <string name="zooPictureDescription">Photographie du zoo</string>
+    <string name="greenCircleDescription">cercle Vert</string>
 
 </resources>

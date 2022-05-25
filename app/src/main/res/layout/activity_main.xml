@@ -7,6 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <ImageButton
+            android:onClick="switchToMapActivity"
             android:contentDescription="@string/mapPageButtonString"
             android:layout_width="130dp"
             android:layout_height="130dp" android:id="@+id/zooMapViewButton"
@@ -16,18 +17,20 @@
             android:layout_marginEnd="16dp" android:src="@drawable/icon_map" android:scaleType="centerInside"
             android:background="#00FFFFFF" tools:ignore="ImageContrastCheck"/>
     <ImageButton
+            android:onClick="switchToDonateActivity"
             android:contentDescription="@string/donatePageButtonString"
             android:layout_width="130dp"
-            android:layout_height="130dp" android:id="@+id/donateViewButton"
+            android:layout_height="130dp" android:id="@+id/zooDonateViewButton"
             app:layout_constraintTop_toTopOf="@+id/horizontalGuide"
             app:layout_constraintStart_toStartOf="@+id/verticalGuide"
             android:layout_marginTop="16dp" android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:background="#00FFFFFF"
             android:src="@drawable/icon_donate" android:scaleType="centerInside" tools:ignore="ImageContrastCheck"/>
     <ImageButton
+            android:onClick="switchToNewsActivity"
             android:contentDescription="@string/newsPageButtonString"
             android:layout_width="130dp"
-            android:layout_height="130dp" android:id="@+id/newsViewButton"
+            android:layout_height="130dp" android:id="@+id/zooNewsViewButton"
             app:layout_constraintTop_toTopOf="@+id/horizontalGuide"
             app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
             android:layout_marginTop="16dp" android:layout_marginEnd="16dp"
@@ -46,6 +49,7 @@
             app:layout_constraintGuide_percent="0.5"
     />
     <ImageButton
+            android:onClick="switchToRankingActivity"
             android:contentDescription="@string/rankingPageButtonString"
             android:layout_width="130dp"
             android:layout_height="130dp" android:id="@+id/zooListViewButton"
