@@ -40,5 +40,7 @@
     <string name="orangeCircleDescription">cerle orange</string>
     <string name="zooPictureDescription">Photographie du zoo</string>
     <string name="greenCircleDescription">cercle Vert</string>
+    <string name="mapPinIconDescription">Zoo sur carte</string>
+    <string name="mapMapDescription">Carte de France</string>
 
 </resources>
