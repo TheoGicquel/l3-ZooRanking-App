@@ -1,8 +1,7 @@
 package zoo.turquoise.zooappturquoise;
 import org.json.JSONException;
-import zoo.turquoise.zooappturquoise.ZooLoader;
 
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 public class Zoo
 {
     private String name, description, imageURL, userReview;
@@ -13,15 +12,24 @@ public class Zoo
 
     public Zoo()
     {
-
+        this.name = "Zoo Inconnu";
+        this.description = "description";
+        this.imageURL = "https://www.cjoint.com/doc/20_12/JLFrj6Sanqu_image-not-found.png";
+        this.rank = 0;
     }
 
+    /*
     public static Zoo createFromJSONObject(org.json.simple.JSONObject next) {
-        return null;
+        Zoo newZoo = new Zoo();
+        next.get()
+        return newZoo;
     }
 
+     */
 
-    public String getName()			{ return name; }
+
+    public  String getName()			{ return name; }
+    public void setName(String foo){this.name=foo;}
     public String getDescription() 	{ return description; }
     public String getImageURL() 	{ return imageURL; }
     public String getUserReview()	{ return userReview; }
@@ -92,10 +100,10 @@ public class Zoo
             z.scorePrice = 		 ((Long)errorOnNull(j.get("price"))).intValue();
             z.scoreTreatment = 	 ((Long)errorOnNull(j.get("treatment"))).intValue();
             z.scoreCustomers = 	 ((Double)errorOnNull(j.get("score"))).floatValue();
-            z.distance = 		 ((Double)errorOnNull(j.get("distance"))).floatValue();
+            z.distance = 		 ((Long)errorOnNull(j.get("distance"))).floatValue();
             z.visited = 		 (Boolean)errorOnNull(j.get("visited"));
         }
-        catch(NullPointerException | JSONException e)
+        catch(NullPointerException e)
         {
             System.err.println(e.getMessage());
             return null;

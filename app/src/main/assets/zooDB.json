@@ -26,7 +26,7 @@
     "imageURL": "https://www.zoo-la-fleche.com/wp-content/uploads/2021/05/anim01.jpg",
     "name": "Zoo de la Flèche",
     "visited": true,
-    "rank": 3,
+    "rank": 2,
     "userReview": "Ce zoo était formidable"
   },
   {
@@ -41,7 +41,7 @@
     "imageURL": "https://www.zoo-la-fleche.com/wp-content/uploads/2021/05/anim01.jpg",
     "name": "Zoo de la Palmyre",
     "visited": true,
-    "rank": 2,
+    "rank": 3,
     "userReview": "Ce zoo était formidable"
   },
   {
@@ -56,7 +56,7 @@
     "imageURL": "https://www.zoo-la-fleche.com/wp-content/uploads/2021/05/anim01.jpg",
     "name": "Réserve Zoologique de la Haute-Touche",
     "visited": true,
-    "rank": 1,
+    "rank": 4,
     "userReview": "Génial"
   },
   {
@@ -71,7 +71,7 @@
     "imageURL": "https://www.zoo-la-fleche.com/wp-content/uploads/2021/05/anim01.jpg",
     "name": "Safari de Peaugres",
     "visited": true,
-    "rank": 4,
+    "rank": 5,
     "userReview": "Ce zoo était formidable"
   },
   {
@@ -86,7 +86,7 @@
     "imageURL": "https://www.zoo-la-fleche.com/wp-content/uploads/2021/05/anim01.jpg",
     "name": "Safari zoo de Thoiry",
     "visited": true,
-    "rank": 5,
+    "rank": 6,
     "userReview": "Ce zoo était formidable"
   },
   {
@@ -101,7 +101,7 @@
     "imageURL": "https://www.familiscope.fr/uploads/dossiers/4000/20ZoosAmneville600x300.jpg",
     "name": "Parc zoologique d’Amnéville",
     "visited": true,
-    "rank": 6,
+    "rank": 7,
     "userReview": "Ce zoo était formidable"
   }
 ]
