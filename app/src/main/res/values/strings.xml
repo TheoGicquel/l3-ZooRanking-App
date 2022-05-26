@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ZooPedia</string>
+    <string name="app_name">ZooRanking</string>
     <!-- MAIN MENU -->
         <string name="mapPageButtonString">Carte</string>
         <string name="rankingPageButtonString">Classement</string>
