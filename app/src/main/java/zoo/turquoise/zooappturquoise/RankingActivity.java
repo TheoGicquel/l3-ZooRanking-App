@@ -9,6 +9,8 @@ public class RankingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.ranking_layout);
     }
     public void switchToMainActivity(View view) {

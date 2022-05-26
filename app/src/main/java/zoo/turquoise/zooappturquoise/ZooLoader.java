@@ -17,7 +17,7 @@ public class ZooLoader
 {
     private static ArrayList<Zoo> zoos;
 
-    private ZooLoader(){}
+    ZooLoader(){}
 
     public static ArrayList<Zoo> getZoos() { return zoos; }
 
