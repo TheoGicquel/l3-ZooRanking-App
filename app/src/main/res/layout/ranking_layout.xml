@@ -22,6 +22,7 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="horizontal" android:gravity="fill_horizontal">
             <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                         android:onClick="switchToMainActivity"
                          android:contentDescription="@string/goBackString"
                          android:layout_weight="1"
                          android:id="@+id/topBarBackButton" app:icon="?attr/actionModeCloseDrawable"
@@ -41,6 +42,7 @@
                     android:id="@+id/searchZooField" android:layout_weight="1" android:visibility="gone"
                     android:importantForAutofill="no"/>
             <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                         android:onClick="searchAction"
                          android:contentDescription="@string/searchActionString"
                          android:layout_weight="1"
                          android:id="@+id/topBarSearchButton" app:icon="?android:attr/actionModeWebSearchDrawable"

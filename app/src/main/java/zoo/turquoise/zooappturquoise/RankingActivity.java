@@ -73,32 +73,28 @@ public class RankingActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int chosenZooRankId = position;
 
-;
                 Log.d("TAG", "click !");
                 Log.d("TAG", String.valueOf(position));
                 Log.d("TAG", String.valueOf(id));
-
+                ZooLoader.setSelectedZoo(chosenZooRankId);
+                switchToDetailsActivity();
             }
 
         });
-
-
-
         }
 
-
+    public void switchToDetailsActivity() {
+        Intent intent = new Intent(this, ZooInfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     public void switchToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
-
-    }
-
-
-    void searchAction(View view)
-    {
 
     }
 

@@ -18,10 +18,14 @@ public class ZooLoader
 {
     private static ArrayList<Zoo> zoos;
     private static Context context;
+    private static int selectedZooRank;
     ZooLoader(Context context){
         this.context = context;
     }
     ZooLoader(){}
+
+    public static void setSelectedZoo(int select){selectedZooRank = select;}
+    public static int getSelectedZooRank(){return selectedZooRank;}
 
     public static ArrayList<Zoo> getZoos() { return zoos; }
 
