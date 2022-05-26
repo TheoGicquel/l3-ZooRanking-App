@@ -1,32 +1,44 @@
 package zoo.turquoise.zooappturquoise;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.util.Log;
 import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import zoo.turquoise.zooappturquoise.Zoo;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ZooLoader
 {
     private static ArrayList<Zoo> zoos;
-
+    private static Context context;
+    ZooLoader(Context context){
+        this.context = context;
+    }
     ZooLoader(){}
 
     public static ArrayList<Zoo> getZoos() { return zoos; }
 
-    public static void load(String jsonPath)
-    {
+    public static void load(String jsonPath) throws IOException {
         //Read JSON file
         zoos = new ArrayList<>();
         JSONParser parser = new JSONParser();
-        try (Reader reader = new FileReader(jsonPath))
+
+
+        // asset management
+        AssetManager assetManager = context.getAssets();
+        Log.d("TAG", "load: ");
+        //AssetFileDescriptor afd = assetManager.openFd("zooDB.json");
+        //FileDescriptor fd = afd.getFileDescriptor();
+        InputStream fiopen = assetManager.open(jsonPath);
+
+        try (Reader reader =  new BufferedReader(new InputStreamReader(fiopen)))
         {
 
             JSONArray jsonArray = (JSONArray) parser.parse(reader);
@@ -62,7 +74,7 @@ public class ZooLoader
         }
     }
 
-    public static void main(String[] args) throws JSONException {
+    public static void main(String[] args) throws JSONException, IOException {
         ZooLoader.load("./zoos.json");
         ArrayList<Zoo> zoos = ZooLoader.getZoos();
         for(Zoo zoo : zoos)
@@ -72,5 +84,9 @@ public class ZooLoader
         }
         ZooLoader.save("./zoos.json");
 
+    }
+
+    public static void setContext(Context applicationContext) {
+        context = applicationContext;
     }
 }

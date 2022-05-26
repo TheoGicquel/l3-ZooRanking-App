@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ZooLoader zl = new ZooLoader();
-        zl.load("zooDB.json");
 
         setContentView(R.layout.activity_main);
 
