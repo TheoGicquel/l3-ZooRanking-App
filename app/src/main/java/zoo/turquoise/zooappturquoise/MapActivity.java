@@ -18,7 +18,7 @@ public class MapActivity extends AppCompatActivity {
         ZooLoader.setContext(this.getApplicationContext());
         zoos=ZooLoader.getZoos();
     }
-
+  // 
     public void viewZooAction(View view)
     {
         switch (view.getId())
