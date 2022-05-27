@@ -217,15 +217,15 @@ public class ZooInfoActivity extends AppCompatActivity {
         if(value<=2){
             image.setImageResource(R.drawable.circle_red);
         }
-        if(value<=5 && value>2)
+        else if(value<=5 && value>2)
         {
             image.setImageResource(R.drawable.circle_orange);
         }
-        if(value>5 && value<8)
+        else if(value>5 && value<8)
         {
             image.setImageResource(R.drawable.circle_yellow);
         }
-        if(value>=8)
+        else if(value>=8)
         {
             image.setImageResource(R.drawable.circle_green);
         }
