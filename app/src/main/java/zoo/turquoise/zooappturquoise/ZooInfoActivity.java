@@ -7,11 +7,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,8 +44,9 @@ public class ZooInfoActivity extends AppCompatActivity {
 
 
             // reviews
-            Button reviewButton = findViewById(R.id.reviewButton);
+            Button reviewButton = findViewById(R.id.reviewFinalizeButton);
 
+            TextView avgValueLabel = findViewById(R.id.infoAvgLabel);
             TextView avgValueText = findViewById(R.id.infoAvgValue);
             avgValueText.setText(String.valueOf(displayedZoo.getScoreCustomers()));
 
@@ -88,11 +87,55 @@ public class ZooInfoActivity extends AppCompatActivity {
             // Description
             TextView descriptionText = findViewById(R.id.zooDescriptionText);
             descriptionText.setText(displayedZoo.getDescription());
-            
+
+            // review displaying
+            TextView userReviewText = findViewById(R.id.userReviewText);
+            TextView userReviewLabel = findViewById(R.id.userReviewTextLabel);
+            TextView reviewCountLabel = findViewById(R.id.infoReviewCountLabel);
+            EditText postReviewField = findViewById(R.id.postReviewField);
+            Boolean wantsToPostReview;
+            Button userSetPresenceButton = findViewById(R.id.userSetPresenceButton);
+            reviewButton.setVisibility(View.GONE);
+
+            if(displayedZoo.isVisited())
+            {
+                userReviewText.setVisibility(View.VISIBLE);
+                reviewCountLabel.setVisibility(View.VISIBLE);
+                userSetPresenceButton.setVisibility(View.GONE);
+                postReviewField.setVisibility(View.GONE);
+                userReviewText.setText(displayedZoo.getUserReview());
+
+            }else
+            {
+                avgValueLabel.setVisibility(View.INVISIBLE);
+                userReviewLabel.setVisibility(View.GONE);
+                userReviewText.setVisibility(View.GONE);
+                reviewCountLabel.setVisibility(View.GONE);
+                reviewCountText.setVisibility(View.GONE);
+                postReviewField.setVisibility(View.GONE);
+                avgValueText.setVisibility(View.GONE);
+
+            }
             
         }
 
-        // code from tutorialspoint
+    public void zooSetPresenceAction(View view) {
+        TextView userReviewText = findViewById(R.id.userReviewText);
+        TextView userReviewLabel = findViewById(R.id.userReviewTextLabel);
+        TextView reviewCountLabel = findViewById(R.id.infoReviewCountLabel);
+        EditText postReviewField = findViewById(R.id.postReviewField);
+        Button reviewFinalizeButton = findViewById(R.id.reviewFinalizeButton);
+        Boolean wantsToPostReview;
+        Button userSetPresenceButton = findViewById(R.id.userSetPresenceButton);
+        reviewFinalizeButton.setVisibility(View.VISIBLE);
+        userReviewLabel.setVisibility(View.VISIBLE);
+        Button finalizeReview = findViewById(R.id.reviewFinalizeButton);
+        finalizeReview.setVisibility(View.VISIBLE);
+        userSetPresenceButton.setVisibility(View.GONE);
+        postReviewField.setVisibility(View.VISIBLE);
+    }
+
+    // code from tutorialspoint
     private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
         public DownloadImageFromInternet(ImageView imageView) {
@@ -117,7 +160,42 @@ public class ZooInfoActivity extends AppCompatActivity {
     }
 
         public void zooPostReviewAction(View view) {
-            // rate zoo here
+
+
+            TextView userReviewText = findViewById(R.id.userReviewText);
+            TextView userReviewLabel = findViewById(R.id.userReviewTextLabel);
+            TextView reviewCountLabel = findViewById(R.id.infoReviewCountLabel);
+            EditText postReviewField = findViewById(R.id.postReviewField);
+            Button reviewFinalizeButton = findViewById(R.id.reviewFinalizeButton);
+            Boolean wantsToPostReview;
+            Button userSetPresenceButton = findViewById(R.id.userSetPresenceButton);
+            Button finalizeReview = findViewById(R.id.reviewFinalizeButton);
+            userReviewText.setVisibility(View.GONE);
+            reviewCountLabel.setVisibility(View.VISIBLE);
+            userSetPresenceButton.setVisibility(View.GONE);
+            postReviewField.setVisibility(View.GONE);
+            finalizeReview.setVisibility(View.GONE);
+
+
+            userReviewText.setVisibility(View.VISIBLE);
+            userSetPresenceButton.setVisibility(View.GONE);
+            postReviewField.setVisibility(View.GONE);
+
+            TextView avgValueLabel = findViewById(R.id.infoAvgLabel);
+            TextView avgValueText = findViewById(R.id.infoAvgValue);
+            avgValueText.setVisibility(View.VISIBLE);
+            avgValueLabel.setVisibility(View.VISIBLE);
+            TextView reviewCountText = findViewById(R.id.infoReviewCountValue);
+            reviewCountText.setVisibility(View.VISIBLE);
+
+            ArrayList<Zoo> zoos = new ArrayList<Zoo>();
+            zoos = ZooLoader.getZoos();
+            Zoo selectedZoo = zoos.get(ZooLoader.getSelectedZooRank());
+            selectedZoo.setVisited(true);
+            selectedZoo.setReview(String.valueOf(postReviewField.getText()));
+            userReviewText.setText(selectedZoo.getUserReview());
+
+            // TODO : save updated zoo data in json file (see TODOs in ZooLoader.java)
         }
 
     public void switchToMainActivity(View view) {

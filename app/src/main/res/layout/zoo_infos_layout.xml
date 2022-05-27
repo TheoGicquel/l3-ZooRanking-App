@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
@@ -60,9 +61,16 @@
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:onClick="zooPostReviewAction"
             android:text="@string/infoRateButtonText"
-            android:id="@+id/reviewButton"
+            android:id="@+id/reviewFinalizeButton"
             app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/zooDisplayPicture"/>
+            app:layout_constraintBottom_toBottomOf="@+id/zooDisplayPicture"
+            tools:ignore="DuplicateClickableBoundsCheck"/>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:onClick="zooSetPresenceAction"
+            android:text="@string/infoUserPresenceButtonText"
+            android:id="@+id/userSetPresenceButton"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/zooDisplayPicture"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="@string/infoAvgText"
               android:id="@+id/infoAvgLabel"
@@ -74,7 +82,8 @@
             android:layout_height="200dp" app:srcCompat="@drawable/zoo_photography" android:id="@+id/zooDisplayPicture"
             android:contentDescription="@string/zooPictureDescription"
             app:layout_constraintEnd_toStartOf="@+id/infoAvgLabel" android:layout_marginEnd="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/infoNameText" android:layout_marginTop="16dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/infoNameText" android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
               android:text="@string/infoExotismLabelText"
               android:id="@+id/textView5"
@@ -164,7 +173,8 @@
             app:layout_constraintStart_toStartOf="@+id/accessibilityCircle"
             app:layout_constraintBottom_toBottomOf="@+id/accessibilityCircle"
             app:layout_constraintTop_toTopOf="@+id/accessibilityCircle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:textColor="#000000" android:visibility="visible"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:textColor="#000000"
+            android:visibility="visible"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
@@ -183,4 +193,31 @@
             app:layout_constraintTop_toTopOf="@+id/wellBeingCircle"
             app:layout_constraintBottom_toBottomOf="@+id/wellBeingCircle" android:textColor="#0D47A1"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+    <TextView
+            android:text="@string/userReviewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/userReviewTextLabel"
+            app:layout_constraintTop_toBottomOf="@+id/infoReviewCountLabel"
+            android:layout_marginTop="12dp" app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="@string/placeHolderLoremIpsum"
+            android:layout_width="158dp"
+            android:layout_height="50dp" android:id="@+id/userReviewText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintTop_toBottomOf="@+id/userReviewTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/reviewFinalizeButton" android:visibility="gone"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:inputType="textShortMessage"
+            android:ems="10"
+            android:id="@+id/postReviewField"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/userReviewTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/reviewFinalizeButton" tools:ignore="SpeakableTextPresentCheck"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
