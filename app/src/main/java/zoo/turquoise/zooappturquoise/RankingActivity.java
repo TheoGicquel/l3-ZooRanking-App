@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import zoo.turquoise.zooappturquoise.Zoo.*;
 
@@ -98,6 +96,13 @@ public class RankingActivity extends AppCompatActivity {
 
     }
 
+    public void searchAction(View view)
+    {
+        TextView topBarTitle = findViewById(R.id.rankingTopBarTitle);
+        EditText searchField = findViewById(R.id.searchZooField);
+        topBarTitle.setVisibility(View.GONE);
+        searchField.setVisibility(View.VISIBLE);
+    }
 
 
 }
