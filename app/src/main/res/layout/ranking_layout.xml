@@ -32,15 +32,15 @@
             <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
                       android:layout_weight="1"
                       android:textAlignment="center" android:gravity="center"
-                      android:text="@string/infoTopBarText" android:textColor="#FFFFFF" android:textSize="32sp"/>
+                      android:text="@string/rankingtopbartext" android:textColor="#FFFFFF" android:textSize="32sp"
+                      android:id="@+id/rankingTopBarTitle"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
-                    android:text="Name"
                     android:ems="10"
                     android:id="@+id/searchZooField" android:layout_weight="1" android:visibility="gone"
-                    android:importantForAutofill="no"/>
+                    android:importantForAutofill="no" android:hint="@string/searchFieldHint"/>
             <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
                          android:onClick="searchAction"
                          android:contentDescription="@string/searchActionString"
