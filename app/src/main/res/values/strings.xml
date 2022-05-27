@@ -42,5 +42,8 @@
     <string name="greenCircleDescription">cercle Vert</string>
     <string name="mapPinIconDescription">Zoo sur carte</string>
     <string name="mapMapDescription">Carte de France</string>
+    <string name="userReviewLabel">votre avis :</string>
+    <string name="infoUserPresenceButtonText">J\'y suis allé !</string>
+    <string name="postReviewFieldDescription">Texte de votre avis</string>
 
 </resources>

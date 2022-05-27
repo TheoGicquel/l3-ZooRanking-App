@@ -34,12 +34,10 @@ public class ZooLoader
         zoos = new ArrayList<>();
         JSONParser parser = new JSONParser();
 
+        // TODO : attempt reading previously saved data instead of reading static asset file
 
         // asset management
         AssetManager assetManager = context.getAssets();
-        Log.d("TAG", "load: ");
-        //AssetFileDescriptor afd = assetManager.openFd("zooDB.json");
-        //FileDescriptor fd = afd.getFileDescriptor();
         InputStream fiopen = assetManager.open(jsonPath);
 
         try (Reader reader =  new BufferedReader(new InputStreamReader(fiopen)))
@@ -68,6 +66,7 @@ public class ZooLoader
             jsonArray.add(z.toJSONObject());
 
 
+        // TODO : implement saving to local storage
         try (FileWriter file = new FileWriter(jsonPath))
         {
             file.write(jsonArray.toJSONString());
