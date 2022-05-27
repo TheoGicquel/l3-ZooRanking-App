@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
                                                    android:layout_height="match_parent">
 
 
@@ -16,6 +17,7 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="horizontal" android:gravity="fill_horizontal">
             <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                         android:onClick="switchToMainActivity"
                          android:contentDescription="@string/goBackString"
                          android:layout_weight="1"
                          android:id="@+id/topBarBackButton" app:icon="?attr/actionModeCloseDrawable"
@@ -27,152 +29,194 @@
                       android:textAlignment="center" android:gravity="center"
                       android:text="@string/infoTopBarText" android:textColor="#FFFFFF" android:textSize="32sp"/>
             <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                         android:onClick="switchToRankingActivity"
                          android:contentDescription="@string/searchActionString"
                          android:layout_weight="1"
                          android:id="@+id/topBarSearchButton" app:icon="?android:attr/actionModeWebSearchDrawable"
                          android:src="?android:attr/actionModeWebSearchDrawable"
-                         android:background="#00FFFFFF" android:tint="#FFFFFF"/>
+                         android:background="#00FFFFFF" android:tint="#FFFFFF" android:visibility="visible"/>
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:layout_width="296dp" android:layout_height="49dp"
               android:text="@string/zooName_1"
               android:textAppearance="@style/TextAppearance.AppCompat.Large"
-              android:id="@+id/textView"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintEnd_toStartOf="@+id/infoRankNumber" app:layout_constraintHorizontal_bias="0.5"
-              android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-              android:layout_marginTop="8dp"/>
+              android:id="@+id/infoNameText"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginEnd="96dp" app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+              android:layout_marginTop="16dp"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="@string/infoReviewsCountLabelText"
-              android:id="@+id/textView11" app:layout_constraintStart_toStartOf="@+id/textView10"
-              app:layout_constraintTop_toBottomOf="@+id/textView10" android:layout_marginTop="16dp"/>
+              android:id="@+id/infoReviewCountLabel"
+              app:layout_constraintStart_toStartOf="@+id/infoAvgLabel"
+              app:layout_constraintTop_toBottomOf="@+id/infoAvgLabel" android:layout_marginTop="20dp"/>
     <TextView android:layout_width="0dp" android:layout_height="0dp"
               android:text="@string/placeHolderLoremIpsum"
               app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               android:layout_marginBottom="16dp" app:layout_constraintHorizontal_bias="0.0"
-              android:layout_marginEnd="8dp" android:layout_marginStart="8dp" android:id="@+id/textView7"
+              android:layout_marginEnd="8dp" android:layout_marginStart="8dp" android:id="@+id/zooDescriptionText"
               app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintVertical_bias="0.0"
               android:layout_marginTop="32dp"/>
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:onClick="zooPostReviewAction"
             android:text="@string/infoRateButtonText"
-            android:id="@+id/button"
-            app:layout_constraintStart_toEndOf="@+id/imageView10" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView10"/>
+            android:id="@+id/reviewFinalizeButton"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/zooDisplayPicture"
+            tools:ignore="DuplicateClickableBoundsCheck"/>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:onClick="zooSetPresenceAction"
+            android:text="@string/infoUserPresenceButtonText"
+            android:id="@+id/userSetPresenceButton"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/zooDisplayPicture"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="@string/infoAvgText"
-              android:id="@+id/textView10"
-              app:layout_constraintStart_toEndOf="@+id/infoRankNumber"
-              app:layout_constraintTop_toTopOf="@+id/imageView10"
-              android:layout_marginTop="16dp"/>
+              android:id="@+id/infoAvgLabel"
+              app:layout_constraintEnd_toStartOf="@+id/infoAvgValue"
+              android:layout_marginEnd="8dp" app:layout_constraintTop_toTopOf="@+id/zooDisplayPicture"/>
     <ImageView
+            android:maxWidth="207dp"
             android:layout_width="207dp"
-            android:layout_height="200dp" app:srcCompat="@drawable/zoo_photography" android:id="@+id/imageView10"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView10" android:layout_marginEnd="16dp"
-            android:contentDescription="@string/zooPictureDescription"/>
+            android:layout_height="200dp" app:srcCompat="@drawable/zoo_photography" android:id="@+id/zooDisplayPicture"
+            android:contentDescription="@string/zooPictureDescription"
+            app:layout_constraintEnd_toStartOf="@+id/infoAvgLabel" android:layout_marginEnd="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/infoNameText" android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
               android:text="@string/infoExotismLabelText"
               android:id="@+id/textView5"
-              app:layout_constraintTop_toBottomOf="@+id/imageView13"
-              app:layout_constraintStart_toStartOf="@+id/imageView13"
-              app:layout_constraintEnd_toEndOf="@+id/imageView13"/>
+              app:layout_constraintTop_toBottomOf="@+id/exotismCircle"
+              app:layout_constraintStart_toStartOf="@+id/exotismCircle"
+              app:layout_constraintEnd_toEndOf="@+id/exotismCircle"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
               android:text="@string/infoPriceLabelText"
               android:id="@+id/textView4"
-              app:layout_constraintTop_toBottomOf="@+id/imageView14"
-              app:layout_constraintEnd_toEndOf="@+id/imageView14"
-              app:layout_constraintStart_toStartOf="@+id/imageView14"/>
+              app:layout_constraintTop_toBottomOf="@+id/priceCircle"
+              app:layout_constraintEnd_toEndOf="@+id/priceCircle"
+              app:layout_constraintStart_toStartOf="@+id/priceCircle"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
               android:text="@string/infoAccessibilityText"
               android:id="@+id/textView3"
-              app:layout_constraintTop_toBottomOf="@+id/imageView15"
-              app:layout_constraintStart_toStartOf="@+id/imageView15"
-              app:layout_constraintEnd_toEndOf="@+id/imageView15"/>
+              app:layout_constraintTop_toBottomOf="@+id/accessibilityCircle"
+              app:layout_constraintStart_toStartOf="@+id/accessibilityCircle"
+              app:layout_constraintEnd_toEndOf="@+id/accessibilityCircle"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
               android:text="@string/infoWellBeingText"
               android:id="@+id/textView2"
-              app:layout_constraintTop_toBottomOf="@+id/imageView11"
-              app:layout_constraintStart_toStartOf="@+id/imageView11"
-              app:layout_constraintEnd_toEndOf="@+id/imageView11"/>
+              app:layout_constraintTop_toBottomOf="@+id/wellBeingCircle"
+              app:layout_constraintStart_toStartOf="@+id/wellBeingCircle"
+              app:layout_constraintEnd_toEndOf="@+id/wellBeingCircle"/>
     <TextView
             android:text="@string/infoRankUnknown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/infoRankNumber"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:layout_marginStart="12dp"
-            app:layout_constraintTop_toTopOf="@+id/textView"/>
+            android:layout_width="60dp"
+            android:layout_height="29dp" android:id="@+id/infoRankNumber"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toEndOf="@+id/infoNameText"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/infoNameText"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/infoAvgValue"
-            app:layout_constraintTop_toTopOf="@+id/textView10"
-            app:layout_constraintStart_toEndOf="@+id/textView10" android:layout_marginStart="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="64dp" app:layout_constraintTop_toTopOf="@+id/infoAvgLabel"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/infoReviewCountValue"
-            app:layout_constraintStart_toEndOf="@+id/textView11" app:layout_constraintTop_toTopOf="@+id/textView11"
+            app:layout_constraintStart_toEndOf="@+id/infoReviewCountLabel"
+            app:layout_constraintTop_toTopOf="@+id/infoReviewCountLabel"
             android:layout_marginStart="8dp"/>
     <ImageView
 
             android:layout_width="70dp"
-            android:layout_height="70dp" app:srcCompat="@drawable/circle_green" android:id="@+id/imageView11"
+            android:layout_height="70dp" app:srcCompat="@drawable/circle_green" android:id="@+id/wellBeingCircle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView15" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/accessibilityCircle" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/zooDisplayPicture" android:layout_marginTop="12dp"
             android:contentDescription="@string/greenCircleDescription"/>
     <ImageView
             android:layout_width="70dp"
-            android:layout_height="70dp" app:srcCompat="@drawable/circle_orange" android:id="@+id/imageView13"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/imageView14"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintTop_toTopOf="@+id/imageView11"
+            android:layout_height="70dp" app:srcCompat="@drawable/circle_orange" android:id="@+id/exotismCircle"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/priceCircle"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintTop_toTopOf="@+id/wellBeingCircle"
             android:contentDescription="@string/orangeCircleDescription"/>
+    <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/circle_red" android:id="@+id/priceCircle"
+            app:layout_constraintEnd_toStartOf="@+id/exotismCircle"
+            app:layout_constraintStart_toEndOf="@+id/accessibilityCircle" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="@+id/wellBeingCircle"
+            android:contentDescription="@string/redCircleDescription"/>
+    <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/circle_yellow" android:id="@+id/accessibilityCircle"
+            app:layout_constraintEnd_toStartOf="@+id/priceCircle"
+            app:layout_constraintStart_toEndOf="@+id/wellBeingCircle" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="@+id/wellBeingCircle"
+            android:contentDescription="@string/yellowCircleDescription"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/exotismRatingValue"
-            app:layout_constraintTop_toTopOf="@+id/imageView13"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-            app:layout_constraintStart_toStartOf="@+id/imageView13"
-            app:layout_constraintEnd_toEndOf="@+id/imageView13" android:textColor="#283593"/>
-    <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp" app:srcCompat="@drawable/circle_red" android:id="@+id/imageView14"
-            app:layout_constraintEnd_toStartOf="@+id/imageView13"
-            app:layout_constraintStart_toEndOf="@+id/imageView15" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toTopOf="@+id/imageView11" android:contentDescription="@string/redCircleDescription"/>
-    <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp" app:srcCompat="@drawable/circle_yellow" android:id="@+id/imageView15"
-            app:layout_constraintEnd_toStartOf="@+id/imageView14"
-            app:layout_constraintStart_toEndOf="@+id/imageView11" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toTopOf="@+id/imageView11" android:contentDescription="@string/yellowCircleDescription"/>
+            app:layout_constraintTop_toTopOf="@+id/exotismCircle"
+            app:layout_constraintBottom_toBottomOf="@+id/exotismCircle"
+            app:layout_constraintStart_toStartOf="@+id/exotismCircle"
+            app:layout_constraintEnd_toEndOf="@+id/exotismCircle" android:textColor="#283593"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/accessibilityRatingValue"
-            app:layout_constraintEnd_toEndOf="@+id/imageView15"
-            app:layout_constraintStart_toStartOf="@+id/imageView15"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-            app:layout_constraintTop_toTopOf="@+id/imageView15"/>
+            app:layout_constraintEnd_toEndOf="@+id/accessibilityCircle"
+            app:layout_constraintStart_toStartOf="@+id/accessibilityCircle"
+            app:layout_constraintBottom_toBottomOf="@+id/accessibilityCircle"
+            app:layout_constraintTop_toTopOf="@+id/accessibilityCircle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:textColor="#000000"
+            android:visibility="visible"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/priceRatingValue"
-            app:layout_constraintStart_toStartOf="@+id/imageView14"
-            app:layout_constraintEnd_toEndOf="@+id/imageView14"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-            app:layout_constraintTop_toTopOf="@+id/imageView14" android:textColor="#000000"/>
+            app:layout_constraintStart_toStartOf="@+id/priceCircle"
+            app:layout_constraintEnd_toEndOf="@+id/priceCircle"
+            app:layout_constraintBottom_toBottomOf="@+id/priceCircle"
+            app:layout_constraintTop_toTopOf="@+id/priceCircle" android:textColor="#000000"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
     <TextView
             android:text="@string/infoRatingUnknown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/wellBeingRatingValue"
-            app:layout_constraintEnd_toEndOf="@+id/imageView11"
-            app:layout_constraintStart_toStartOf="@+id/imageView11"
-            app:layout_constraintTop_toTopOf="@+id/imageView11"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView11" android:textColor="#0D47A1"/>
+            app:layout_constraintEnd_toEndOf="@+id/wellBeingCircle"
+            app:layout_constraintStart_toStartOf="@+id/wellBeingCircle"
+            app:layout_constraintTop_toTopOf="@+id/wellBeingCircle"
+            app:layout_constraintBottom_toBottomOf="@+id/wellBeingCircle" android:textColor="#0D47A1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+    <TextView
+            android:text="@string/userReviewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/userReviewTextLabel"
+            app:layout_constraintTop_toBottomOf="@+id/infoReviewCountLabel"
+            android:layout_marginTop="12dp" app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="@string/placeHolderLoremIpsum"
+            android:layout_width="158dp"
+            android:layout_height="50dp" android:id="@+id/userReviewText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            app:layout_constraintTop_toBottomOf="@+id/userReviewTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/reviewFinalizeButton" android:visibility="gone"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:inputType="textShortMessage"
+            android:ems="10"
+            android:id="@+id/postReviewField"
+            app:layout_constraintStart_toEndOf="@+id/zooDisplayPicture" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/userReviewTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/reviewFinalizeButton" tools:ignore="SpeakableTextPresentCheck"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,13 @@
 package zoo.turquoise.zooappturquoise;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import static zoo.turquoise.zooappturquoise.ZooLoader.getZoos;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -13,6 +16,8 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
 
     }

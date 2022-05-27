@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="zoo.turquoise.zooappturquoise">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
             android:allowBackup="true"
@@ -23,6 +24,7 @@
         <activity android:name=".RankingActivity"/>
         <activity android:name=".NewsActivity"/>
         <activity android:name=".DonateActivity"/>
+        <activity android:name=".ZooInfoActivity"/>
 
         <activity
                 android:name=".ListZoo"

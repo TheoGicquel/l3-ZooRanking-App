@@ -4,6 +4,35 @@
                                                    android:layout_height="match_parent"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.google.android.material.appbar.AppBarLayout android:layout_height="wrap_content"
+                                                     android:layout_width="0dp"
+                                                     app:layout_constraintStart_toStartOf="parent"
+                                                     app:layout_constraintEnd_toEndOf="parent"
+                                                     app:layout_constraintHorizontal_bias="0.0"
+                                                     app:layout_constraintTop_toTopOf="parent"
+                                                     android:id="@+id/appBarLayout">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="horizontal" android:gravity="fill_horizontal">
+            <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                         android:contentDescription="@string/goBackString"
+                         android:layout_weight="1"
+                         android:id="@+id/topBarBackButton" app:icon="?attr/actionModeCloseDrawable"
+                         android:textColor="#FFEB3B"
+                         android:gravity="start" android:textSize="32sp" android:src="?attr/actionModeCloseDrawable"
+                         android:background="#00FFFFFF" android:tint="#FFFFFF"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:textAlignment="center" android:gravity="center"
+                      android:text="@string/infoTopBarText" android:textColor="#FFFFFF" android:textSize="32sp"/>
+            <ImageButton android:layout_width="wrap_content" android:layout_height="match_parent"
+                         android:contentDescription="@string/searchActionString"
+                         android:layout_weight="1"
+                         android:id="@+id/topBarSearchButton" app:icon="?android:attr/actionModeWebSearchDrawable"
+                         android:src="?android:attr/actionModeWebSearchDrawable"
+                         android:background="#00FFFFFF" android:tint="#FFFFFF"/>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
                   android:orientation="vertical">
         <com.google.android.material.appbar.AppBarLayout android:layout_height="wrap_content"
