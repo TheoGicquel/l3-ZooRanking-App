@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent" android:layout_height="match_parent"
+              android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageButton
+                android:onClick="switchToMainActivity"
+                android:contentDescription="@string/goBackString"
+                android:layout_width="90dp"
+                android:layout_height="81dp" app:srcCompat="@drawable/icon_back" android:id="@+id/backButton2"
+                android:background="#00FFFFFF"
+                android:scaleType="centerInside"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
 
-    <ImageButton
-            android:onClick="switchToMainActivity"
-            android:contentDescription="@string/goBackString"
-            android:layout_width="90dp"
-            android:layout_height="81dp" app:srcCompat="@drawable/icon_back" android:id="@+id/backButton2"
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView android:layout_width="238dp" android:layout_height="136dp"
+                  android:text="Dons" android:gravity="center"
+                  android:textSize="38dp" tools:layout_editor_absoluteY="0dp" tools:layout_editor_absoluteX="127dp"/>
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="58dp"
+              android:text="Cette page vous permet de faire des dons aux associations luttant pour la cause animale:"
+              android:gravity="center" tools:layout_editor_absoluteY="122dp" tools:layout_editor_absoluteX="0dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageButton
+                android:onClick="openSeaSheoherdSite"
+                android:layout_width="90dp"
+                android:layout_height="81dp" app:srcCompat="@drawable/drapeau_sea_shepherd" android:id="@+id/sea_shepherd"
+                android:background="#00FFFFFF"
+                android:scaleType="centerInside"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+        <TextView android:layout_width="312dp" android:layout_height="match_parent"
+                  android:text="Sea Shepherd" android:gravity="center_horizontal"
+        />
+    </LinearLayout>
+
+</LinearLayout>
+
