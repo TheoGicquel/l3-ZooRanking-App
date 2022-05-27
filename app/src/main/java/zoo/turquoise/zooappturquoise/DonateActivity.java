@@ -25,6 +25,15 @@ public class DonateActivity extends AppCompatActivity {
         gotoUrl("https://seashepherd.fr/");
     }
 
+    public void openWWFSite(View view){
+        gotoUrl("https://www.wwf.fr/sengager-ensemble/faire-un-don-ifi?reserved_code_origine=22IFISEAGOOG");
+    }
+
+    public void openASPASSite(View view){
+        gotoUrl("https://www.aspas-nature.org/nous-soutenir/faire-un-don/");
+    }
+
+    // Ouvre un site internet grâce à l'url renseigné
     private void gotoUrl(String url){
         Uri uri=Uri.parse(url);
         startActivity(new Intent(Intent.ACTION_VIEW,uri));
