@@ -47,5 +47,6 @@
     <string name="postReviewFieldDescription">Texte de votre avis</string>
     <string name="rankingtopbartext">Classement</string>
     <string name="searchFieldHint">recherche...</string>
+    <string name="newsTitleBarText">Actualités</string>
 
 </resources>
