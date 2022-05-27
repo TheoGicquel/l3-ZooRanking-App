@@ -29,7 +29,7 @@ git clone git@forgens.univ-ubs.fr:e2103929/zoo_android.git
 ```
 
 ### Récupération d'un package compilé au préalable
-* rendez vous sur la [page des releases](https://forgens.univ-ubs.fr/gitlab/e2103929/zoo_android/-/releases) du projet et téléchargez le fichier `.apk`
+* rendez vous sur la [page des releases](https://forgens.univ-ubs.fr/gitlab/e2103929/zoo_android/-/releases/Release) du projet et téléchargez le fichier `.apk`
 * transférez le fichier vers votre périphérique (mail, bluetooth, câble USB, etc..)
 * sur votre périphérique, utilisez votre gestionnaire de fichier pour retrouver le fichier transféré précédemment, puis installez le paquet. 
 
