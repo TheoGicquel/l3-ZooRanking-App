@@ -4,7 +4,7 @@
 * Nom : **ZooRanking**
 * Problématique :
 
-    **Comment rendre les zoos plus attractifs et inviter une certaine population à les visiter à l’aide d’une application ludique et informative utilisable depuis chez soi tout en sensibilisant aux différentes problématiques en lien avec les zoos**
+    **Comment rendre les zoos plus attractifs et inviter une certaine population à les visiter à l’aide d’une application ludique et informative utilisable depuis chez soi tout en sensibilisant aux différentes problématiques en lien avec les zoos ?**
 
 
 ## Fonctionnalités
