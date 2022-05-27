@@ -67,6 +67,8 @@ public class ListZoo extends AppCompatActivity {
     }
 
     public void zoo(){
-        // Ouvrir la page correspondant au zoo sélectionné
+        Intent intent = new Intent(this, ZooInfoActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
