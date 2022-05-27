@@ -42,9 +42,7 @@ public class MapActivity extends AppCompatActivity {
             case R.id.zoo6:
                 ZooLoader.setSelectedZoo(6);
                 break;
-            case R.id.zoo7:
-                ZooLoader.setSelectedZoo(7);
-                break;
+
         }
         switchToDetailsActivity();
     }
