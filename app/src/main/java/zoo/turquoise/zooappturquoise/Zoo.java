@@ -17,7 +17,7 @@ public class Zoo
         this.imageURL = "https://www.cjoint.com/doc/20_12/JLFrj6Sanqu_image-not-found.png";
         this.rank = 0;
     }
-    
+
     /*
     public static Zoo createFromJSONObject(org.json.simple.JSONObject next) {
         Zoo newZoo = new Zoo();
@@ -59,29 +59,21 @@ public class Zoo
         return name;
     }
 
-    public JSONObject toJSONObject() 
-    {
-        try
-        {
-            JSONObject j = new JSONObject();
-            j.put("name", name);
-            j.put("description", description);
-            j.put("imageURL", imageURL);
-            j.put("userReview", userReview);
-            j.put("countReviews", countReviews);
-            j.put("rank", rank);
-            j.put("access", scoreAccess);
-            j.put("diversity", scoreDiversity);
-            j.put("price", scorePrice);
-            j.put("treatment", scoreTreatment);
-            j.put("score", scoreCustomers);
-            j.put("distance", distance);
-            j.put("visited", visited);
-        }
-        catch(JSONException e)
-        {
-            System.err.println(e.getMessage());
-        }
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject j = new JSONObject();
+        j.put("name", name);
+        j.put("description", description);
+        j.put("imageURL", imageURL);
+        j.put("userReview", userReview);
+        j.put("countReviews", countReviews);
+        j.put("rank", rank);
+        j.put("access", scoreAccess);
+        j.put("diversity", scoreDiversity);
+        j.put("price", scorePrice);
+        j.put("treatment", scoreTreatment);
+        j.put("score", scoreCustomers);
+        j.put("distance", distance);
+        j.put("visited", visited);
         return j;
     }
 
