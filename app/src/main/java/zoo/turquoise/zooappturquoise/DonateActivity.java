@@ -33,6 +33,10 @@ public class DonateActivity extends AppCompatActivity {
         gotoUrl("https://www.aspas-nature.org/nous-soutenir/faire-un-don/");
     }
 
+    public void openLPOSite(View view){
+        gotoUrl("https://www.lpo.fr/");
+    }
+
     // Ouvre un site internet grâce à l'url renseigné
     private void gotoUrl(String url){
         Uri uri=Uri.parse(url);
